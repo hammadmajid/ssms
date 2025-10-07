@@ -1,3 +1,5 @@
+USE LibraryDB;
+
 INSERT INTO Books (BookID, Title, Author) VALUES
 (1, '1984', 'George Orwell'),
 (2, 'To Kill a Mockingbird', 'Harper Lee'),

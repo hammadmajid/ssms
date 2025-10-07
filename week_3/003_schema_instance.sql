@@ -1,3 +1,5 @@
+USE LibraryDB;
+
 -- Schema vs Instance
 -- Schema: definition (CREATE TABLE statements)
 -- Instance: current state (SELECT * shows data)
