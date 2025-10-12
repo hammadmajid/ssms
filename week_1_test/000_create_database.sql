@@ -1,1 +1,0 @@
-CREATE DATABASE testdb_v0;
