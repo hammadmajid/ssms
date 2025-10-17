@@ -1,0 +1,29 @@
+CREATE TABLE Customers (
+	CustomerID INT PRIMARY KEY,
+	FirstName VARCHAR(100) NOT NULL, 
+	LastName VARCHAR(100) NOT NULL,
+	Email VARCHAR(150) NOT NULL UNIQUE
+);
+
+CREATE TABLE Products (
+	ProductID INT PRIMARY KEY,
+	Name VARCHAR(200) NOT NULL,
+	Price DECIMAL(10, 2) CHECK (Price > 0),
+	Stock INT CHECK (Stock >= 0)
+);
+
+CREATE TABLE Orders (
+	OrderID INT PRIMARY KEY,
+	OrderDate DATE NOT NULL,
+	CustomerID INT NOT NULL,
+	FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+)
+
+CREATE TABLE OrderDetails (
+	OrderDetailID INT PRIMARY KEY,
+	OrderID INT NOT NULL,
+	Product INT NOT NULL,
+	Quantity INT NOT NULL CHECK (Quantity > 0),
+	FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+	FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
