@@ -1,0 +1,2 @@
+ALTER TABLE locations
+ADD ID INT IDENTITY(1,1);
