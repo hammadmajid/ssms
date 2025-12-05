@@ -35,3 +35,16 @@ FROM Employee e
 INNER JOIN Department d ON e.Department1D = d.DepartmentID
 WHERE d.DptLocation = 'Karachi'
   AND e.Salary > 75000;
+
+-- Task 6
+SELECT DISTINCT d.DepartmentID, d.DepartmentName
+FROM Department d
+INNER JOIN Employee e ON e.Department1D = d.DepartmentID
+WHERE DATEDIFF(YEAR, e.HireDate, GETDATE()) >= 10;
+
+-- Task 7
+SELECT d.DepartmentID, d.DepartmentName, SUM(e.Salary) AS TotalSalary
+FROM Department d
+INNER JOIN Employee e ON e.Department1D = d.DepartmentID
+GROUP BY d.DepartmentID, d.DepartmentName
+HAVING SUM(e.Salary) > 500000;
