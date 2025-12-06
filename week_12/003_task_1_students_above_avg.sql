@@ -1,0 +1,5 @@
+USE UniversityDB;
+
+SELECT *
+FROM Student
+WHERE CGPA > (SELECT AVG(CGPA) FROM Student);
