@@ -1,7 +1,7 @@
 USE UniDB;
 
 CREATE TABLE Professors (
-	ProfID INT IDENTITY(1, 1) PRIMARY KEY,
+	ProfID INT PRIMARY KEY,
 	ProfName VARCHAR(256),
 	DeptID INT 
 	CONSTRAINT fk_dept_id FOREIGN KEY (DeptID) REFERENCES Department(DeptID),
