@@ -1,1 +1,1 @@
--- The partial dependency is 
+-- The partial dependency is on Class
